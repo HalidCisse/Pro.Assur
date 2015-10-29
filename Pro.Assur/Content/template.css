@@ -1,0 +1,120 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+body {
+	margin:6px 0 8px 0;
+	padding:0;
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	color:#333333;
+	width:100%;
+	height:100%;}
+
+#Content {
+	width:836px;
+	margin:0 auto;
+	padding:2px;
+	overflow:hidden;
+	border: solid 1px #CCCCCC;}
+
+#contentLeft {
+	width:608px;
+	float:left;
+	overflow:hidden;
+	display:block;
+	}
+#contentRight {
+	width:220px;
+	float:right;
+	overflow:hidden;
+	display:block;
+    text-align:center;
+}
+
+#Title {
+	line-height:28px;
+	border: solid 1px #CCC;
+	margin: 6px 0 6px 0;
+	padding:0 0 0 6px;
+	background:#FFF;
+	color:#000;
+	font-size:12px;}
+
+form { margin:0; padding:0;}
+
+#contentTitle {
+	border: solid 2px #5D56A5;
+	margin: 0;
+	margin-top:4px;
+	padding:5px;
+	background:#5D56A5;
+	color:#EFEFEF;
+	font-size:100%;}
+#contentTitleInput {
+	border-left: solid 1px #0e4c8a; border-right: solid 1px #0e4c8a; border-bottom: solid 1px #0e4c8a;
+	margin:0;
+	padding:5px;
+	background:#C4F2C9;
+	color:#0e4c8a;
+	font-size:100%;
+	text-align:center;}
+
+input.inpText {
+	padding:3px; width:172px; font: 12px Verdana, Arial, Helvetica, sans-serif;}
+td {
+	padding:3px;}
+select {
+	padding:1px; width:60px;}
+
+
+#contentTitleOrange {
+	border: solid 1px #7d775e;
+	margin: 0;
+	margin-top:4px;
+	padding:5px;
+	background:#7d775e;
+	color:#EFEFEF;
+	font-size:100%;}
+#contentTitleInputOrange {
+	border-left: solid 1px #7d775e; border-right: solid 1px #7d775e; border-bottom: solid 1px #7d775e;
+	margin:0;
+	padding:5px;
+	background:#f3f2f0;
+	color:#0e4c8a;
+	font-size:100%;
+	text-align:center;}
+
+#Footer {
+	width:836px;
+	margin: 10px auto;
+	padding:2px;
+	border-top: solid 1px #CCCCCC;
+	color:#999999;
+	clear:both;
+	font-size:9px;
+	text-align:right;}
+#Offre {
+  width: 314px;
+  position: absolute;
+  top: 237px;
+  left: 473px;
+  height: 130px;
+ display:block;
+	background-image:url(../img/offre-auto.png) !important;
+	background-repeat:no-repeat;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale src='../img/offre-auto.png');}
+.tel {
+	width:836px;
+	 margin:0 auto; 
+	 padding:5px 0 10px 0; 
+	 text-align:right;
+}
+.tableau {
+	width:98%;
+	 border:0;
+	 text-align: center;
+	}
+.motomobile {
+	display: none;
+}
+

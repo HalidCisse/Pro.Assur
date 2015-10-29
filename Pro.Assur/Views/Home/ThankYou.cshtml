@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Pro.Assur.Models.Devis>
+
+
+@{
+    Layout = "../Shared/_Layout.cshtml";
+    ViewBag.Title = "Demande reçu";
+}
+
+<h2 class="h2 col-sm-12">Votre demande a été reçu avec succès, nous allons vous répondre au plus tôt possible.</h2>
+<div class="container col-md-12">
+    <p>
+        @Html.ActionLink("<- Retour", "Index")
+    </p>
+  
+</div>

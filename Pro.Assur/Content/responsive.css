@@ -1,0 +1,90 @@
+
+
+@media screen and (max-width : 600px) {
+/*************************************propriétés mobile***********************************/
+
+.tel {
+	width: 100%
+}
+#Content {
+	width: 100%;
+}
+#contentLeft {
+	width: 100%;
+
+}
+#Offre {
+	display: none;
+}
+#contentLeft p{ 
+    margin-top: 5px !important;
+}
+.moto {
+	display: none;
+}
+.assures {
+	display: none;
+}
+#contentRight {
+	width: 100%;
+}
+#contentRight img{
+	width: 100%;
+}
+#Footer {
+	width: 100%
+}
+
+input.inpText {
+	font: 10px Verdana, Arial, Helvetica, sans-serif;
+	padding: 0px;
+	width: 100%;
+
+}
+.motomobile {
+	display:block;
+	width: 100%;
+	text-align: center;
+}
+
+
+@media screen  and (min-width : 610px) and (max-width : 1024px){
+/*************************************propriétés tablet*************************************/
+
+b.tel {
+	width: 100%
+}
+#Content {
+	width: 100%;
+}
+#contentLeft {
+	width: 100%;
+
+}
+#Offre {
+	display: none;
+}
+#contentLeft p{ 
+    margin-top: 5px !important;
+}
+
+#contentRight {
+	width: 100%;
+}
+#contentRight img{
+	width: 100%;
+}
+#Footer {
+	width: 100%
+}
+
+input.inpText {
+	font: 10px Verdana, Arial, Helvetica, sans-serif;
+	padding: 0px;
+	width: 100%;
+
+}
+
+
+
+}

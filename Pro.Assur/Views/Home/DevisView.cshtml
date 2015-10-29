@@ -1,0 +1,58 @@
+﻿
+@model IEnumerable<Pro.Assur.Models.Devis>
+
+
+@{
+    Layout = "../Shared/_Layout.cshtml";
+    ViewBag.Title = "Liste de Devis";
+}
+
+<h2 class="h2 col-sm-12"  >Liste des demandes</h2>
+<div class="container col-md-12">  
+    <table class="table-responsive table-striped col-md-12 col-sm-12">
+        <tr>
+            <th >
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateDemande)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+
+            <th>
+                <p>Action</p>
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="success">
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+
+                <td class="success">
+                    @Html.DisplayFor(modelItem => item.Prenom)
+                </td>
+
+                <td class="success">
+                    @Html.DisplayFor(modelItem => item.DateDemande)
+                </td>
+
+                <td class="success">
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Suprimer", "Delete", "Home", new { devisGuid=item.DevisGuid }, null)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

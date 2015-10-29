@@ -1,0 +1,42 @@
+﻿<ul class="pagination">
+    @{
+        var pageCountx = ((double)((Model.TotalCount - 1) / Model.PageSize));
+        var pageCount = Math.Abs(pageCountx - (Math.Round(pageCountx))) > 0 ? (int)(pageCountx + 1) : (int)pageCountx;
+
+        var classNameForNext = Model.CurrentPage == pageCountx ? "disabled" : string.Empty;
+        var classNameForPrevious = Model.CurrentPage == 1 ? "disabled" : string.Empty;
+        if (Model.CurrentPage >= Model.TotalPages)
+        {
+            classNameForNext = "disabled" ;
+        }
+    }
+    <li class="@classNameForPrevious">
+        @if (classNameForPrevious == string.Empty)
+        {
+            @Html.ActionLink("« Prev", "Demandes", "Home", routeValues: new { page = (Model.CurrentPage - 1) }, htmlAttributes: new { id = "pageLink" })
+        }
+        else
+        {
+            <a href="#">« Prev</a>
+        }
+    </li>
+
+    @for (var pages = 1; pages <= pageCount; pages++)
+    {       
+        var active = "";
+        if (pages == Model.CurrentPage) { active = "active"; }
+        <li class="@active">
+            @Html.ActionLink(pages.ToString(), "Demandes", "Home", routeValues: new { page = pages }, htmlAttributes: new { id = "pageLink" })
+        </li>
+    }
+    <li class="@classNameForNext">
+        @if (classNameForNext == string.Empty)
+        {
+            @Html.ActionLink("Next »", "Demandes", "Home", routeValues: new { page = (Model.CurrentPage + 1) }, htmlAttributes: new { id = "pageLink" })
+        }
+        else
+        {
+            <a href="#">Next »</a>
+        }
+    </li>
+</ul>

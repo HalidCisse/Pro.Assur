@@ -1,0 +1,96 @@
+﻿@model Pro.Assur.Models.Pager<Pro.Assur.Models.Devis>
+@{
+    ViewBag.Title = "Liste des demandes";
+}
+
+<h2 class="h2 col-12">Liste des demandes</h2>
+
+
+<table class="table table-striped table-hover table-responsive" style="border-collapse:collapse;">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Tel</th>
+        <th>Email</th>
+        <th>Date Demande</th>
+        <th>
+            <p>Action</p></th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    @foreach (var item in Model.AsQueryable().ToList())
+    {
+        <tr data-toggle="collapse" data-target="#@item.DevisGuid" class="accordion-toggle">
+            <td >@Html.DisplayFor(modelItem => item.Nom)</td>
+
+            <td >@Html.DisplayFor(modelItem => item.Prenom)</td>
+
+            <td>@Html.DisplayFor(modelItem => item.Tel)</td>
+
+            <td >@Html.DisplayFor(modelItem => item.Email)</td>
+
+            <td>@item.DateDemande.GetValueOrDefault().ToShortDateString()</td>
+
+            <td>@Html.ActionLink("Suprimer", "Delete", "Home", new {devisGuid = item.DevisGuid}, null)</td>
+        </tr>
+
+        <tr >
+            <td colspan="6" class="hiddenRow">
+                <div class="accordian-body collapse well" id="@item.DevisGuid">
+                    <table class="table table-responsive" style="border-collapse: collapse;">
+                        <tr>
+                            <td >@Html.DisplayNameFor(modelItem => item.ModelVehicule): @item.ModelVehicule</td>
+
+                            <td >@Html.DisplayNameFor(modelItem => item.PuissanceFiscale): @item.PuissanceFiscale</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>@Html.DisplayNameFor(modelItem => item.DateCirculation): @item.DateCirculation.GetValueOrDefault().ToShortDateString()</td>
+
+                            <td>@Html.DisplayNameFor(modelItem => item.DatePermis): @item.DatePermis.GetValueOrDefault().ToShortDateString()</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>@Html.DisplayNameFor(modelItem => item.CompagnieActuelle): @item.CompagnieActuelle</td>
+
+                            <td>@Html.DisplayNameFor(modelItem => item.MotifResiliation): @item.MotifResiliation</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>@Html.DisplayNameFor(modelItem => item.Responsables): @item.Responsables</td>
+
+                            <td>@Html.DisplayNameFor(modelItem => item.NonResponsables): @item.NonResponsables</td>
+
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>Age: @(DateTime.Today.Year - item.DateNaissance.GetValueOrDefault().Year)</td>
+
+                            <td>@Html.DisplayNameFor(modelItem => item.CodePostal): @item.CodePostal</td>
+
+                            <td>@Html.DisplayNameFor(modelItem => item.Ville): @item.Ville</td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    }
+
+    </tbody>
+
+    <tr>
+        <td colspan="5">
+            @Html.Partial("_PagingPartial", Model)
+        </td>
+    </tr>
+</table>
+
+
+
