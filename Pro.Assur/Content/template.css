@@ -108,6 +108,14 @@ select {
 	 margin:0 auto; 
 	 padding:5px 0 10px 0; 
 	 text-align:right;
+    display: list-item;
+}
+.telLeft {
+	width:836px;
+	 margin:0 auto; 
+	 padding:5px 0 10px 0; 
+	 text-align:left;
+    display: inline;
 }
 .tableau {
 	width:98%;

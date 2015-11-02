@@ -186,6 +186,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MotifResiliation.cs" />
     <Compile Include="Models\SeedData.cs" />
+    <Compile Include="Models\SendEmail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -200,11 +201,12 @@
     <Content Include="Content\SpryValidationSelect.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
+    <Content Include="images\assurance-auto-alcoolemie.jpg" />
     <Content Include="images\assurance-auto.jpg" />
     <Content Include="images\callback_fr_button.png" />
     <Content Include="images\derniers-assures.png" />
     <Content Include="images\femCar.jpg" />
-    <Content Include="images\logo.jpg" />
+    <Content Include="images\logo.png" />
     <Content Include="images\malus.jpg" />
     <Content Include="images\malusses.png" />
     <Content Include="images\moto_icone.jpg" />

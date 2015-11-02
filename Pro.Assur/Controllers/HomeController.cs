@@ -28,6 +28,7 @@ namespace Pro.Assur.Controllers
                 devis.DateDemande = DateTime.Now;
                 db.Devises.Add(devis);
                 await db.SaveChangesAsync();
+                await SendEmail.Report(devis);
                 return RedirectToAction("ThankYou");
             }
         }
