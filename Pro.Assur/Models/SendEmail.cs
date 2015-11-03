@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
+using System.IO;
 using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
 using System.Web;
+using RazorEngine;
+using RazorEngine.Templating;
 
 namespace Pro.Assur.Models
 {
@@ -17,16 +18,19 @@ namespace Pro.Assur.Models
             try
             {
                 var fromEmailAddress = ConfigurationManager.AppSettings["FromEmailAddress"];
+                var toEmailAddress = ConfigurationManager.AppSettings["ToEmailAddress"];
                 var fromEmailDisplayName = ConfigurationManager.AppSettings["FromEmailDisplayName"];
                 var fromEmailPassword = ConfigurationManager.AppSettings["FromEmailPassword"];
                 var smtpHost = ConfigurationManager.AppSettings["SMTPHost"];
                 var smtpPort = ConfigurationManager.AppSettings["SMTPPort"];
+                
+                var template = File.OpenText(HttpContext.Current.Server.MapPath("~/images/EmailTemplate.cshtml")).ReadToEnd(); 
+                var body = Engine.Razor.RunCompile(template, "templateKey", null, devis);
 
-                var body = "Your registration has been done successfully. Thank you.";
                 var message = new MailMessage(new MailAddress(fromEmailAddress, fromEmailDisplayName),
-                    new MailAddress(devis.Email, devis.Prenom + " " + devis.Nom))
+                    new MailAddress(toEmailAddress, "Malus-Assur.fr"))
                 {
-                    Subject = "Thank You For Your Registration",
+                    Subject = "Demande de devis par malus-assur.fr",
                     IsBodyHtml = true,
                     Body = body
                 };
@@ -36,13 +40,16 @@ namespace Pro.Assur.Models
                     Credentials = new NetworkCredential(fromEmailAddress, fromEmailPassword),
                     Host = smtpHost,
                     EnableSsl = true,
-                    Port = !string.IsNullOrEmpty(smtpPort) ? Convert.ToInt32(smtpPort) : 0
+                    Port = !string.IsNullOrEmpty(smtpPort) ? Convert.ToInt32(smtpPort) : 0,
+                    //UseDefaultCredentials = false,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,                   
                 };
                await  client.SendMailAsync(message);
             }
             catch (Exception ex)
             {
-                throw (new Exception("Mail send failed to " + devis.Email + ", though registration done."));
+                return;
+                //throw (new Exception("Mail send failed to " + devis.Email + ", though registration done."));
             }
         }
     }

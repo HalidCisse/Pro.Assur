@@ -118,11 +118,11 @@
         <div id="contentTitleInput">
             <table width="60%" border="0" cellpadding="0" cellspacing="0" align="center">
                 <tr>
-                    <td width="102" align="left" valign="middle">Responsables</td>
+                    <td width="102" align="left" valign="middle">@Html.DisplayNameFor(d=>d.Responsables)</td>
                     <td width="249" align="left" valign="middle">
                         @Html.DropDownListFor(model => model.Responsables, new SelectList(new List<string> {"Aucun", "1", "2", "3", "4", "5"}, "Aucun"), new {@name = "NombreSinistreResponsableTxt", @id = "NombreSinistreResponsableTxt", @class = "titreSel"})
                     </td>
-                    <td width="81" align="left" valign="middle" nowrap="nowrap">Non responsables</td>
+                    <td width="81" align="left" valign="middle" nowrap="nowrap">@Html.DisplayNameFor(d => d.NonResponsables)</td>
                     <td width="156" align="left" valign="middle">
                         @Html.DropDownListFor(model => model.NonResponsables, new SelectList(new List<string> {"Aucun", "1", "2", "3", "4", "5"}, "Aucun"), new {@name = "NombreSinistreNonResponsableTxt", @id = "NombreSinistreNonResponsableTxt", @class = "titreSel"})
                     </td>

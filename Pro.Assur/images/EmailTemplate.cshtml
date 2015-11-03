@@ -1,0 +1,81 @@
+﻿@*@model Pro.Assur.Models.Devis
+@{
+
+}*@
+
+<h3>Madame, Monsieur,<br/>
+    Nous avons le plaisir de vous adresser cette nouvelle demande de devis déposée sur notre serveur.
+</h3>
+
+<table align="center" width="600" style="border:1px solid rgb(51, 204, 204);font-family:Tahoma;font-size:13px">
+
+    <thead>
+        <tr bgcolor="rgb(51, 204, 204)">
+            <td colspan="4" bgcolor="rgb(51, 204, 204)" align="center" style="padding: 10px; color: rgb(255, 255, 255)">
+                <strong>Fiche assurance auto malussé</strong>
+            </td>
+        </tr>
+    </thead>
+
+    <tbody style="padding: 18px 30px 10px; font-size: 11px">
+    <tr style="border-bottom: 1px solid rgb(239, 220, 180)">
+        <td><strong>Nom</strong></td>
+        <td>&nbsp;@Model.Nom</td>
+        <td><strong>Prénom</strong></td>
+        <td>&nbsp;@Model.Prenom</td>
+    </tr>
+
+    <tr style="border-bottom: 1px solid rgb(239, 220, 180)">
+        <td><strong>Email</strong></td>
+        <td>&nbsp;@Model.Email</td>
+        <td><strong>Téléphone</strong></td>
+        <td>&nbsp;@Model.Tel</td>
+    </tr>
+
+    <tr style="border-bottom: 1px solid rgb(239, 220, 180)">
+        <td><strong>Date d'insertion</strong></td>
+        <td>&nbsp;@Model.DateDemande</td>
+        <td><strong>Date de naissance</strong></td>
+        <td>&nbsp;@Model.DateNaissance</td>
+    </tr>
+
+    <tr style="border-bottom: 1px solid rgb(239, 220, 180)">
+        <td><strong>Ville</strong></td>
+        <td>&nbsp;@Model.Ville</td>
+        <td><strong>Code Postal</strong></td>
+        <td>&nbsp;@Model.CodePostal</td>
+    </tr>
+
+    <tr style="border-bottom: 1px solid rgb(239, 220, 180)">
+        <td><strong>Date mise en circulation</strong></td>
+        <td>&nbsp;@Model.DateCirculation</td>
+        <td><strong>Compagnie actuelle</strong></td>
+        <td>&nbsp;@Model.CompagnieActuelle</td>
+    </tr>
+
+    <tr style="border-bottom: 1px solid rgb(239, 220, 180)">
+        <td><strong>Modéle</strong></td>
+        <td>&nbsp;@Model.ModelVehicule</td>
+        <td><strong>Date du permis</strong></td>
+        <td>&nbsp;@Model.DatePermis</td>
+    </tr>
+
+    <tr style="border-bottom: 1px solid rgb(239, 220, 180)">
+        <td><strong>Motif Resilaition</strong></td>
+        <td>&nbsp;@Model.MotifResiliation</td>
+        <td><strong>Sinistre responsables</strong></td>
+        <td>&nbsp;@Model.Responsables</td>
+    </tr>
+  
+    </tbody>
+
+    <tfoot>
+        <tr bgcolor="rgb(51, 204, 204)">
+            <td colspan="4" align="center" style="padding:10px;color:rgb(255,255,255)">
+                <strong>
+                    <a href="http://www.malus-assur.fr" style="color:rgb(255,255,255)" target="_blank">Malus-Assur.fr</a>
+                </strong>
+            </td>
+        </tr>
+    </tfoot>
+</table>
