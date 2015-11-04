@@ -27,8 +27,7 @@ namespace Pro.Assur.Models
                 var template = File.OpenText(HttpContext.Current.Server.MapPath("~/images/EmailTemplate.cshtml")).ReadToEnd(); 
                 var body = Engine.Razor.RunCompile(template, "templateKey", null, devis);
 
-                var message = new MailMessage(new MailAddress(fromEmailAddress, fromEmailDisplayName),
-                    new MailAddress(toEmailAddress, "Malus-Assur.fr"))
+                var message = new MailMessage(new MailAddress(fromEmailAddress, fromEmailDisplayName), new MailAddress(toEmailAddress))
                 {
                     Subject = "Demande de devis par malus-assur.fr",
                     IsBodyHtml = true,

@@ -16,6 +16,12 @@ namespace Pro.Assur.Controllers
             return View();
         }
 
+        [AllowAnonymous]
+        public ActionResult Index2()
+        {
+            return View();
+        }
+
         [HttpPost]
         [AllowAnonymous]
         public async Task<RedirectToRouteResult> Save(Devis devis)

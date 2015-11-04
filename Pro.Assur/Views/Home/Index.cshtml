@@ -3,9 +3,12 @@
 
 @model Devis
 @{
-    ViewBag.Title = "Assurance Auto";
+    //ViewBag.Title = "Assurance Auto";
 }
 
+<title itemprop="name">
+    Malus-Assur.fr | [tarif assurance auto malus en ligne], [assurance auto résilié malus], [contrat assurance voiture malus], [devis malus-assur.fr]
+</title>
 
 <div margin="20" style="margin-top: -50px">
     <div class="telLeft"><img src="~/images/logo.png" alt="logo" style="width: 400px; height: 50px; margin-right:-500px; margin-bottom:-50px" /></div>
@@ -15,13 +18,13 @@
 <div id="Content" margin="20">
 
 <div id="contentRight">
-    <img src="~/images/malusses.png" style="padding-top: 15px;"/>
-    <p style="margin-top: 44px;">
-        <div style="margin-bottom: 55px;">
+    @*<img src="~/images/malusses.png" style="padding-top: 15px;"/>*@
+    @*<p style="margin-top: 44px;">
+        <div style="margin-bottom: 55px;">*@
             <img src="~/images/callback_fr_button.png" alt="callback" border="0" href="callto:0988188821"> />
-        </div>
-    </p>
-    <p style="margin-top: 5px;" class="assures">
+        @*</div>
+    </p>*@
+    <p style="margin: 5px; " class="assures">
         <img src="~/images/derniers-assures.png"/>
     </p>
 </div>
@@ -39,28 +42,27 @@
         <div id="contentTitleInput">
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                    <td align="right" valign="middle">Mod&egrave;le du <strong>v&eacute;hicule</strong></td>
+                    <td align="right" valign="middle">Marque du <strong>v&eacute;hicule</strong></td>
                     <td align="center" valign="middle">:</td>
                     <td align="left" valign="middle">
-                        <span id="sprytextfield2">
-                                @Html.TextBoxFor(m => m.ModelVehicule, new {@class = "inpText", @id = "ModeCompletTxt", @name = "ModeCompletTxt"})                               
-                                <span class="textfieldRequiredMsg">x</span>
-                            </span>*
+                    <span id="sprytextfield2">
+                        @Html.TextBoxFor(m => m.ModelVehicule, new {@class = "inpText", @id = "ModeCompletTxt", @name = "ModeCompletTxt"})                               
+                        <span class="textfieldRequiredMsg">x</span>
+                    </span>*
                     </td>
                 </tr>
+
                 <tr>
                     <td align="right" valign="middle">Puissance fiscale</td>
                     <td align="center" valign="middle">:</td>
                     <td align="left" valign="middle">
                         <span id="sprytextfield3">
-                                @Html.TextBoxFor(m => m.PuissanceFiscale, new {@class = "inpText", @id = "PuissanceFiscaleTxt", @name = "PuissanceFiscaleTxt"})
-                                @*<label>
-                                        <input type="text" name="PuissanceFiscaleTxt" id="PuissanceFiscaleTxt" class="inpText" />
-                                    </label>*@
+                                @Html.TextBoxFor(m => m.PuissanceFiscale, new {@class = "inpText", @id = "PuissanceFiscaleTxt", @name = "PuissanceFiscaleTxt"})                               
                                 <span class="textfieldRequiredMsg">x</span>
                             </span>*
                     </td>
                 </tr>
+
                 <tr>
                     <td align="right" valign="middle">Date de <strong>mise en circulation</strong></td>
                     <td align="center" valign="middle">:</td>
@@ -72,6 +74,7 @@
                             </span>*
                     </td>
                 </tr>
+
                 <tr>
                     <td align="right" valign="middle">Date <strong>d'obtention du permis</strong></td>
                     <td align="center" valign="middle">:</td>
@@ -112,8 +115,7 @@
                 </span>
         </div>
 
-        <div id="contentTitle">Vos ant&eacute;c&eacute;dents sur <b>36 derniers mois</b>
-        </div>
+        <div id="contentTitle">Vos ant&eacute;c&eacute;dents sur <b>36 derniers mois</b></div>
 
         <div id="contentTitleInput">
             <table width="60%" border="0" cellpadding="0" cellspacing="0" align="center">
@@ -131,8 +133,7 @@
             </table>
         </div>
 
-        <div id="contentTitle"><b>Vos coordonn&eacute;es!</b>
-        </div>
+        <div id="contentTitle"><b>Vos coordonn&eacute;es!</b></div>
 
         <div id="contentTitleInput">
             <table class="tableau" cellpadding="0" cellspacing="0">

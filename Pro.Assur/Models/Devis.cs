@@ -11,7 +11,7 @@ namespace Pro.Assur.Models
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
         [DataType(DataType.Text)]
-        [Display(Name = "Model du Vehicule")]
+        [Display(Name = "Marque du Vehicule")]
         public string ModelVehicule { get; set; }
 
         [Required]
